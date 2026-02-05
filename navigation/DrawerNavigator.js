@@ -2,7 +2,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen/HomeScreens';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
-import InfoCompletaPartido from '../screens/InfoCompletaPartido/InfoCompletaPartido';
+import detallInfoMatch from '../screens/DetallInfoMatch/detallInfoMatch';
 import BarraLateral from '../components/layout/BarraLateral';
 
 
@@ -19,7 +19,7 @@ export default function DrawerNavigator({ isLogged }) {
       <Drawer.Screen name="Perfil" component={ProfileScreen} />
       <Drawer.Screen
         name="Detalle"
-        component={InfoCompletaPartido}
+        component={detallInfoMatch}
         options={{ drawerItemStyle: { display: 'none' } }}
       />
     </Drawer.Navigator>
