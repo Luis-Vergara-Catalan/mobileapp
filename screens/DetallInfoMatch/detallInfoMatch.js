@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import styles from './detallInfoMatch.styles';
 
 
-export default function detallInfoMatch({ route, navigation }) {
+export default function DetallInfoMatch({ route, navigation }) {
   const { match } = route.params || {};
 
   return (

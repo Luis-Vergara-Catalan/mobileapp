@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from './matchCard.styles';
+import styles from './MatchCard.styles';
 
 
-export default function MatchCard({ match, navigation }) {
+export default function matchCard({ match, navigation }) {
   const { home, away, resultHome, resultVisit } = match;
 
   return (

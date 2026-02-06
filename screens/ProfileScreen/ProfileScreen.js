@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from './ProfileScreen.styles';
+import styles from './PorfileScreen.styles';
 
 
-export default function ProfileScreen({ navigation }) {
+export default function profileScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Perfil del usuario</Text>
