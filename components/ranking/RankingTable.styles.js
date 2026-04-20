@@ -1,42 +1,50 @@
-import { View, Text, FlatList } from 'react-native';
-import { FRIENDS } from '../../data/ranking';
-import styles from './RankingTable.styles';
+import { StyleSheet } from 'react-native';
 
-const getMedalla = (index) => {
-  if (index === 0) return '🥇';
-  if (index === 1) return '🥈';
-  if (index === 2) return '🥉';
-  return `${index + 1}`;
-};
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EEF1F4',
+    padding: 15,
+  },
 
+  table: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    paddingVertical: 10,
 
-export default function RankingSimpleScreen() {
+    // sombra
+    elevation: 3,
+  },
 
-  const rankingOrdenado = [...FRIENDS].sort(
-    (a, b) => b.puntos - a.puntos
-  );
+  header: {
+    flexDirection: 'row',
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderColor: '#ddd',
+  },
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.table}>
-      <View style={styles.header}>
-        <Text style={styles.colPuesto}>Puesto</Text>
-        <Text style={styles.colNombre}>Nombre</Text>
-        <Text style={styles.colPuntos}>Puntos</Text>
-      </View>
+  row: {
+    flexDirection: 'row',
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderColor: '#f0f0f0',
+  },
 
-      <FlatList
-        data={rankingOrdenado}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => (
-          <View style={styles.row}>
-            <Text style={styles.colPuesto}>{getMedalla(index)}</Text>
-            <Text style={styles.colNombre}>{item.name}</Text>
-            <Text style={styles.colPuntos}>{item.puntos}</Text>
-          </View>
-        )}
-      />
-      </View>
-    </View>
-  );
-}
+  colPuesto: {
+    flex: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+
+  colNombre: {
+    flex: 3,
+    textAlign: 'left',
+    paddingLeft: 10,
+  },
+
+  colPuntos: {
+    flex: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+});

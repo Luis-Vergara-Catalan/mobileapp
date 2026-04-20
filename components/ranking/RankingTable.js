@@ -1,6 +1,7 @@
 import { View, Text, FlatList} from 'react-native';
 import { FRIENDS } from '../../data/ranking';
 import styles from './RankingTable.styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const getMedalla = (index) => {
   if (index === 0) return '🥇';
@@ -17,7 +18,7 @@ export default function RankingSimpleScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.table}>
       <View style={styles.header}>
         <Text style={styles.colPuesto}>Puesto</Text>
@@ -26,6 +27,7 @@ export default function RankingSimpleScreen() {
       </View>
 
       <FlatList
+        contentContainerStyle={{ paddingBottom: 20 }}
         data={rankingOrdenado}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
@@ -37,6 +39,6 @@ export default function RankingSimpleScreen() {
         )}
       />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

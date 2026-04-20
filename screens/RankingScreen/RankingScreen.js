@@ -1,16 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-
-const DATA = [
-  { id: '1', name: 'Luis', points: 120 },
-  { id: '2', name: 'Carlos', points: 95 },
-  { id: '3', name: 'María', points: 80 },
-  { id: '4', name: 'Ana', points: 70 },
-];
+import {DATA} from '../../data/ranking';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from './RankingScreen.styles';
 
 export default function RankingScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Ranking</Text>
 
       <FlatList
@@ -24,37 +20,7 @@ export default function RankingScreen() {
           </View>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  card: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 15,
-    marginBottom: 10,
-    backgroundColor: '#f2f2f2',
-    borderRadius: 8,
-  },
-  position: {
-    fontWeight: 'bold',
-  },
-  name: {
-    flex: 1,
-    marginLeft: 10,
-  },
-  points: {
-    fontWeight: 'bold',
-  },
-});

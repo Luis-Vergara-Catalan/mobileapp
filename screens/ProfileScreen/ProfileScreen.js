@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from './PorfileScreen.styles';
+import styles from './ProfileScreen.styles';
 
 
-export default function profileScreen({ navigation }) {
+export default function ProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Perfil del usuario</Text>
@@ -12,7 +12,7 @@ export default function profileScreen({ navigation }) {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
-        onPress={() => navigation.navigate('Inicio')}
+        onPress={() => navigation.goBack()}
       >
         <Ionicons name="arrow-back-outline" size={20} color="#fff" />
         <Text style={styles.buttonText}>Volver a Inicio</Text>

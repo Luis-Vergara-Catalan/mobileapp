@@ -4,14 +4,14 @@ import { Ionicons } from '@expo/vector-icons';
 import styles from './MatchCard.styles';
 
 
-export default function matchCard({ match, navigation }) {
+export default function MatchCard({ match, navigation }) {
   const { home, away, resultHome, resultVisit } = match;
 
   return (
     <TouchableOpacity
       style={styles.card}
       activeOpacity={0.8}
-      onPress={() => navigation.navigate('Detalle', { match })}>
+      onPress={() => navigation.navigate('DetailInfoMatch', { match })}>
       
 
       <View style={styles.team}>

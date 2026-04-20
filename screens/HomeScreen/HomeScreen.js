@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
-import RankingTable from '../../components/ranking/RankingTable';
-import MatchCard from '../../components/match/MatchCard';
+import RankingTable from '../../components/ranking';
+import MatchCard from '../../components/match';
 import { MATCHES } from '../../data/matches';
 import styles from './HomeScreen.styles';
-
 
 
 export default function HomeScreen({ navigation }) {
